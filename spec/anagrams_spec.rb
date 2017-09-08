@@ -6,21 +6,34 @@ require('rspec')
 	describe("#anagrams.rb") do 
 		it("Check if two words are anagrams") do
 			test = Word.new("bably")
-			expect(test.if_anagram("lybab")).to eq("These words are anagrams.")
+			expect(test.if_anagram_antigram("lyabb")).to eq("These words are anagrams.")
 		end
 		
 		it("Check if two words are anagrams even if cases are different") do
 			test = Word.new("bably")
-			expect(test.if_anagram("lYbaB")).to eq("These words are anagrams.")
+			expect(test.if_anagram_antigram("lYbaB")).to eq("These words are anagrams.")
 		end
+
 		it("check if a word is a palindrome") do
 			test = Word.new("madam")
 			expect(test.if_palindrome).to eq("This word is a palindrome")
 		end
+
 		it("check if input is a word") do
 			test = Word.new("mtn")
 			expect(test.if_word).to eq("This is not a word")
 		end
+
+		it("If phrases aren't anagrams,check whether they are actually antigrams.") do
+			test = Word.new("hi")
+			expect(test.if_anagram_antigram("bye")).to eq("These words have no letter matches and are antigrams")
+		end
+		
+		it("if two words aren't anagrams, return how many letters from the argument are actual matches with the receiver") do
+			test = Word.new("cat")
+			expect(test.if_anagram_antigram("batty")).to eq("These words aren't anagrams but 2 letters match:,a,t")
+		end
+
 	end
 
 

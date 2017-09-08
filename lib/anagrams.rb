@@ -3,17 +3,33 @@ class Word
 		@word =  word
 	end
 
-	def if_anagram(wordtocompare)
+	def if_anagram_antigram(wordtocompare)
 		word1 = @word.downcase
 		word2 = wordtocompare.downcase
 		array1 = word1.split("")
 		array2 = word2.split("")
-		if (array1.sort == array2.sort)
-			return "These words are anagrams."
-		else return "These words are not anagrams."
+		array1.sort!
+		array2.sort!
+		result = ""
+		counter = 0
+		array1.each {|item|
+			if (array2.include? item)
+				counter += 1;
+				result = result + "," +item
+			end
+		}
+		
+		if (array1 == array2)
+			result =  "These words are anagrams."
+			return result
+		elsif (	counter > 0)
+			return "These words aren't anagrams but #{counter} letters match:" + result	
+		elsif (	counter = 0)
+			return "These words have no letter matches and are antigrams"		 
+		else return "These words are nither anagrams nor antigrams."
 		end
-
 	end
+
 	def if_palindrome
 		array = @word.downcase.split("")
 		array.each_index { |i|
@@ -23,6 +39,7 @@ class Word
 			end
 		}
 	end
+
 	def if_word
 		array = @word.downcase.split("")
 		vowels = ["a", "e", "i","o","u"]
@@ -33,6 +50,10 @@ class Word
 			end
 		}
 	end
+end
+
+class Sentence
+	 
 end
 
 puts "hi"
