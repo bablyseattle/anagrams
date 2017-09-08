@@ -4,11 +4,15 @@ require('rspec')
 	
 
 	describe("#anagrams.rb") do 
-		it("makes new object from class") do
-			test = Anagrams.new("baby", "lybab")
-			expect(test.if_word_anagram).to eq(true)
+		it("Check if two words are anagrams") do
+			test = Anagrams.new("bably", "lybab")
+			expect(test.if_word_anagram).to eq("These words are anagrams.")
 		end
 		
+		it("Check if two words are anagrams even if cases are different") do
+			test = Anagrams.new("Bably", "lybab")
+			expect(test.if_word_anagram).to eq("These words are anagrams.")
+		end
 	end
 
 

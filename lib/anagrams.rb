@@ -5,13 +5,13 @@ class Anagrams
 	end
 
 	def if_word_anagram
-		array1 = []
-		array2 = []
-		array1 = @word1.split("")
-		array2 = @word2.split("")
+		word1 = @word1.downcase
+		word2 = @word2.downcase
+		array1 = word1.split("")
+		array2 = word2.split("")
 		if (array1.sort == array2.sort)
-			return true
-		else return false
+			return "These words are anagrams."
+		else return "These words are not anagrams."
 		end
 
 	end
