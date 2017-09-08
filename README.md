@@ -6,7 +6,7 @@
 
 ## Description
 
-_It will find Anagram and Antigram word .Two words are anagrams if they contain the exact same letters in a different order. For example, "ruby" and "bury" are anagrams because they contain the same letters.A word is an "antigram" of another word if no letters match. For example, "hi" has no matches with "bye". _
+ it will find Anagram and Antigram word .Two words are anagrams if they contain the exact same letters in a different order. For example, "ruby" and "bury" are anagrams because they contain the same letters.A word is an "antigram" of another word if no letters match. For example, "hi" has no matches with "bye".
 
 ## Setup/Installation Requirements
 

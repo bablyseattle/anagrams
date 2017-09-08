@@ -53,20 +53,20 @@ class Word
 			counter = 0
 			array1.each {|item|
 				if (array2.include? item)
-					counter += 1;
-					result = result + "," +item
+					if(!result.include? item)
+						counter += 1;
+						result = result + "," + item
+					end 
 				end
 			}
 			if (array1 == array2 && if_palindrome?(word1) )
 				return "These words are anagrams as well as palindromes"
 			elsif (array1 == array2)
-				result =  "These words are anagrams."
-				return result
+				return  "These words are anagrams."
 			elsif (	counter > 0)
 				return "These words aren't anagrams but #{counter} letters match:" + result	
-			elsif (	counter = 0)
+			else 
 				return "These words have no letter matches and are antigrams"						 			 
-			else return "These words are nither anagrams nor antigrams."
 			end
 
 		else return "Please enter a meaning full word"
@@ -77,4 +77,12 @@ class Word
 end
 
 
-puts "hi"
+puts "Hello ! Whats your name ?"
+name = gets.chomp
+puts "Welcome #{name} enter two words/phrases to find out whether they are anagrams/antigrams"
+puts "Enter first word/phrase"
+word1 = gets.chomp
+puts "Enter second word/phrase"
+word2 = gets.chomp
+test = Word.new(word1)
+puts test.if_anagram_antigram(word2)
