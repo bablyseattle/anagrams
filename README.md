@@ -46,6 +46,10 @@ _It will find Anagram and Antigram word .Two words are anagrams if they contain 
 	* Example input2: !ana, gram
 	* Example output: These words are anagrams.
 
+* Method to check if inputs are actual words.
+	* Example input1: acccck
+	* Example input2: kvdndcj
+	* Example output: false
 
 ## Known Bugs
 

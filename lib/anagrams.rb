@@ -21,6 +21,16 @@ module Methods
 		else return false
 		end
 	end
+	def if_actual_word?(word)
+		array = word.split("")
+		array.each_index { |i|
+			if (array[i] == array[i+1] && array[i] == array[i+2])
+				return false
+			end
+			}
+			return true
+			
+	end
 end
 
 class Word
