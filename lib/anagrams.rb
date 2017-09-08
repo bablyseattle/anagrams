@@ -3,7 +3,7 @@ class Word
 		@word =  word
 	end
 
-	def if_word_anagram(wordtocompare)
+	def if_anagram(wordtocompare)
 		word1 = @word.downcase
 		word2 = wordtocompare.downcase
 		array1 = word1.split("")
@@ -14,12 +14,22 @@ class Word
 		end
 
 	end
-	def if_word_palindrome
-		array = @word.split("")
+	def if_palindrome
+		array = @word.downcase.split("")
 		array.each_index { |i|
 			if(array[i] == array[array.length - 1 -i])
 				return "This word is a palindrome"
 			else return "This word is not a palindrome"
+			end
+		}
+	end
+	def if_word
+		array = @word.downcase.split("")
+		vowels = ["a", "e", "i","o","u"]
+		vowels.each { |item|
+			if array.include? item
+				return "This is a word"
+			else return "This is not a word"
 			end
 		}
 	end

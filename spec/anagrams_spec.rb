@@ -6,16 +6,20 @@ require('rspec')
 	describe("#anagrams.rb") do 
 		it("Check if two words are anagrams") do
 			test = Word.new("bably")
-			expect(test.if_word_anagram("lybab")).to eq("These words are anagrams.")
+			expect(test.if_anagram("lybab")).to eq("These words are anagrams.")
 		end
 		
 		it("Check if two words are anagrams even if cases are different") do
 			test = Word.new("bably")
-			expect(test.if_word_anagram("lYbaB")).to eq("These words are anagrams.")
+			expect(test.if_anagram("lYbaB")).to eq("These words are anagrams.")
 		end
 		it("check if a word is a palindrome") do
 			test = Word.new("madam")
-			expect(test.if_word_palindrome).to eq("This word is a palindrome")
+			expect(test.if_palindrome).to eq("This word is a palindrome")
+		end
+		it("check if input is a word") do
+			test = Word.new("mtn")
+			expect(test.if_word).to eq("This is not a word")
 		end
 	end
 
