@@ -7,7 +7,7 @@ require('rspec')
 
 		it("show error if words are not meaningfull") do
 			test = Word.new("trgr")
-			expect(test.if_anagram_antigram("rtgr")).to eq("Please enter a meaning full word")
+			expect(test.if_anagram_antigram("rtgr")).to eq("Please enter a meaning full word/phrase")
 		end
 
 		it("Check if two words are anagrams") do

@@ -69,17 +69,17 @@ class Word
 				return "These words have no letter matches and are antigrams"						 			 
 			end
 
-		else return "Please enter a meaning full word"
+		else return "Please enter a meaning full word/phrase"
 		end
 		
 	end
 
 end
 
-
+# User Script
 puts "Hello ! Whats your name ?"
 name = gets.chomp
-puts "Welcome #{name} enter two words/phrases to find out whether they are anagrams/antigrams"
+puts "Welcome #{name} !! enter two words/phrases to find out whether they are anagrams/antigrams"
 puts "Enter first word/phrase"
 word1 = gets.chomp
 puts "Enter second word/phrase"
