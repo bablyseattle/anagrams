@@ -16,35 +16,35 @@ _It will find Anagram and Antigram word .Two words are anagrams if they contain 
 ## Specifications
 
 
-* show error if words are not meaningfull
+* Show error if words are not meaningfull.
 	* Example input1: tmty
 	* Example input2: mtyt
-	* Example output: Please enter a meaning full word
+	* Example output: Please enter a meaning full word.
 
 * Check if two words are anagrams
 	* Example input1: ruby
 	* Example input2: bury
-	* Example output: These words are anagrams
+	* Example output: These words are anagrams.
 
 * Account for the possibility that words might have different cases but should still be anagrams.
 	* Example input1: Tea
 	* Example input2: Eat
-	* Example output: These words are anagrams
+	* Example output: These words are anagrams.
 
 * If a word or phrase is an anagram, check if it's also a palindrome.
 	* Example input1: Madam
 	* Example input2: Madam
-	* Example output: These words are anagrams as well as palindromes
+	* Example output: These words are anagrams as well as palindromes.
 
 * If phrases aren't anagrams, the method should check whether they are actually "antigrams"
 	* Example input1: hi
 	* Example input2: bye
-	* Example output:These words have no letter matches and are antigrams
+	* Example output:These words have no letter matches and are antigrams.
 
 * Account for multiple words being anagrams or "antigrams"
-	* Example input1:
-	* Example input2:
-	* Example output: These words have no letter matches and are antigrams
+	* Example input1: nag *a* ram!
+	* Example input2: !ana, gram
+	* Example output: These words are anagrams.
 
 
 ## Known Bugs

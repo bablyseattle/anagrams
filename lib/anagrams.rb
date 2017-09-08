@@ -32,7 +32,7 @@ class Word
 		word1 = @word.downcase
 		word2 = word_to_compare.downcase
 		word1.gsub!(/[^0-9A-Za-z]/, '')
-		word1.gsub!(/[^0-9A-Za-z]/, '')
+		word2.gsub!(/[^0-9A-Za-z]/, '')
 		if (if_word?(word1) && if_word?(word2))
 			
 			array1 = word1.split("")

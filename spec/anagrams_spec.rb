@@ -25,14 +25,14 @@ require('rspec')
 			expect(test.if_anagram_antigram("madam")).to eq("These words are anagrams as well as palindromes")
 		end
 
-		it("If phrases aren't anagrams,check whether they are actually antigrams.") do
+		it("If words aren't anagrams,check whether they are actually antigrams.") do
 			test = Word.new("hi")
 			expect(test.if_anagram_antigram("bye")).to eq("These words have no letter matches and are antigrams")
 		end
 
 		it("Checks for multiple words being anagrams or antigrams") do
 			test = Word.new("nag *a* ram!")
-			expect(test.if_anagram_antigram("anagram")).to eq("These words are anagrams.")
+			expect(test.if_anagram_antigram("!ana, gram")).to eq("These words are anagrams.")
 		end
 
 		it("if two words aren't anagrams, return how many letters from the argument are actual matches with the receiver") do
