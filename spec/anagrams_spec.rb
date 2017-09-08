@@ -4,6 +4,12 @@ require('rspec')
 	
 
 	describe("#anagrams.rb") do 
+
+		it("show error if words are not meaningfull") do
+			test = Word.new("trgr")
+			expect(test.if_anagram_antigram("rtgr")).to eq("Please enter a meaning full word")
+		end
+
 		it("Check if two words are anagrams") do
 			test = Word.new("ruby")
 			expect(test.if_anagram_antigram("bury")).to eq("These words are anagrams.")
@@ -16,11 +22,7 @@ require('rspec')
 
 		it("If a word or phrase is an anagram, check if it's also a palindrome") do
 			test = Word.new("madam")
-			expect(test.if_palindrome).to eq("This word is a palindrome")
-		end
-
-		it("check if input is a word") do
-			expect(if_word("mtn")).to eq(false)
+			expect(test.if_anagram_antigram("madam")).to eq("These words are anagrams as well as palindromes")
 		end
 
 		it("If phrases aren't anagrams,check whether they are actually antigrams.") do
@@ -31,6 +33,9 @@ require('rspec')
 		it("if two words aren't anagrams, return how many letters from the argument are actual matches with the receiver") do
 			test = Word.new("cat")
 			expect(test.if_anagram_antigram("batty")).to eq("These words aren't anagrams but 2 letters match:,a,t")
+		end
+		it("checks if method cleans string") do
+			expect(clean_string("hi how are you")).to eq("These words are anagrams as well as palindromes")
 		end
 
 	end
