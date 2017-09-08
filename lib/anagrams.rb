@@ -1,8 +1,6 @@
-public def clean_string(string)
-		return string.gsub("[^A-Za-z]+", "")
-	end
+
 module Methods
-	def if_word (word)
+	def if_word? (word)
 		array = word.downcase.split("")
 		vowels = ["a", "e", "i","o","u"]
 		result = []
@@ -17,15 +15,11 @@ module Methods
 		end
 	end
 
-	def if_palindrome(word)
+	def if_palindrome? (word)
 		if word == word.reverse 
 			return true
 		else return false
 		end
-	end
-
-	def clean_string(string)
-		string.gsub("[^A-Za-z]+", "")
 	end
 end
 
@@ -37,7 +31,9 @@ class Word
 	def if_anagram_antigram(word_to_compare)
 		word1 = @word.downcase
 		word2 = word_to_compare.downcase
-		if (if_word(word1) && if_word(word2))
+		word1.gsub!(/[^0-9A-Za-z]/, '')
+		word1.gsub!(/[^0-9A-Za-z]/, '')
+		if (if_word?(word1) && if_word?(word2))
 			
 			array1 = word1.split("")
 			array2 = word2.split("")
@@ -51,7 +47,7 @@ class Word
 					result = result + "," +item
 				end
 			}
-			if (array1 == array2 && if_palindrome(word1) )
+			if (array1 == array2 && if_palindrome?(word1) )
 				return "These words are anagrams as well as palindromes"
 			elsif (array1 == array2)
 				result =  "These words are anagrams."
